@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #2b1a12;
+  --color-brand-gold: #9e7f42;
+  --color-brand-gold-dark: #a9824a;
+  --color-brand-maroon: #6e1f2a;
+  --color-brand-text: #2b2b2b;
+  --color-brand-text-sub: #222222;
+  --color-brand-line: #e3e3e3;
+
+  --font-serif: "Noto Serif KR", "Times New Roman", serif;
+  --font-sans: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+  --font-cormorant: "Cormorant Garamond", "Noto Serif KR", "Times New Roman", serif;
+  --font-pretendard: "Pretendard", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply font-sans text-brand-text bg-white antialiased;
+    min-height: 100vh;
+  }
+}
