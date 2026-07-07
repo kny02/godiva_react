@@ -28,7 +28,7 @@ export default function Product() {
               <p className="mt-9 font-pretendard text-[32px] font-light text-white">{name}</p>
               <a
                 href="#"
-                className="mt-[13px] inline-flex h-[46px] w-35 items-center justify-center border border-white p-[5px] font-cormorant text-base font-semibold tracking-[1.5px] text-white outline outline-1 outline-offset-[-4px] outline-white transition-colors duration-200 ease-in-out hover:bg-white hover:text-brand-gold"
+                className="mt-[13px] inline-flex h-[46px] items-center justify-center whitespace-nowrap border border-white p-[10px] font-cormorant text-[16px] font-semibold tracking-[1.5px] text-white outline outline-1 outline-offset-[-4px] outline-white transition-colors duration-200 ease-in-out hover:bg-white hover:text-brand-gold"
               >
                 VIEW DETAILS
               </a>

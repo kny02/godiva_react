@@ -85,6 +85,10 @@ export default function Hero() {
         ))}
       </div>
 
+      {current === 2 && (
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-60 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.35),transparent)]" />
+      )}
+
       <div
         className={`absolute inset-x-0 bottom-15 z-[1] mx-auto w-full max-w-360 px-10 transition-opacity duration-200 ease-in-out max-[1024px]:bottom-25 max-[768px]:bottom-20 ${
           contentVisible ? 'opacity-100' : 'opacity-0'
