@@ -82,17 +82,17 @@ export default function Header() {
       </div>
 
       {/* ── Mobile header bar (≤768px) ───────────────────── */}
-      <div className="hidden max-[768px]:flex h-full items-center justify-between px-5">
+      <div className="hidden max-[768px]:flex h-full items-start justify-between px-5 pt-6">
         <Link to="/">
           <img src="/assets/images/common/logo.png" alt="GODIVA" className="h-[52px]" />
         </Link>
         <button
           type="button"
-          className="cursor-pointer text-2xl text-white"
+          className="cursor-pointer"
           aria-label="메뉴 열기"
           onClick={toggleNav}
         >
-          ☰
+          <img src="/assets/images/common/mobilemenu_icon.png" alt="메뉴" className="h-6 w-6" />
         </button>
       </div>
 
