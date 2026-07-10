@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npx --yes playwright install chromium)",
       "Bash(pkill -f \"vite\")",
-      "Bash(pkill -f \"npm run dev\")"
+      "Bash(pkill -f \"npm run dev\")",
+      "PowerShell(node -e \"const p=require\\('playwright'\\); console.log\\('ok'\\)\" 2>$null; if \\($?\\) { \"playwright available\" } else { \"no playwright\" })",
+      "PowerShell(npm list *)"
     ]
   }
 }

@@ -20,19 +20,22 @@ export default function Header() {
     setIsNavOpen(false)
   }, [location])
 
+  const toggleNav = () => setIsNavOpen(prev => !prev)
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-[1000] h-25 text-white transition-colors duration-[250ms] ease-in-out ${
         isScrolled ? 'bg-brand-dark' : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto grid h-full w-full max-w-360 grid-cols-[1fr_auto_1fr] items-center px-10">
+      {/* ── Desktop / Tablet header bar (>768px) ─────────── */}
+      <div className="mx-auto grid h-full w-full max-w-360 grid-cols-[1fr_auto_1fr] items-center px-10 max-[768px]:hidden">
         <div className="flex items-center gap-6 justify-self-start">
           <button
             type="button"
             className="hidden cursor-pointer max-[1024px]:block"
             aria-label="메뉴 열기"
-            onClick={() => setIsNavOpen(prev => !prev)}
+            onClick={toggleNav}
           >
             ☰
           </button>
@@ -77,6 +80,35 @@ export default function Header() {
           </button>
         </div>
       </div>
+
+      {/* ── Mobile header bar (≤768px) ───────────────────── */}
+      <div className="hidden max-[768px]:flex h-full items-center justify-between px-5">
+        <Link to="/">
+          <img src="/assets/images/common/logo.png" alt="GODIVA" className="h-[52px]" />
+        </Link>
+        <button
+          type="button"
+          className="cursor-pointer text-2xl text-white"
+          aria-label="메뉴 열기"
+          onClick={toggleNav}
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* ── Mobile nav overlay (≤768px) ──────────────────── */}
+      <nav
+        className={`fixed top-25 left-0 w-full bg-brand-dark flex-col transition-[transform,opacity] duration-[250ms] ease-in-out hidden max-[768px]:flex ${
+          isNavOpen
+            ? 'pointer-events-auto translate-y-0 opacity-100'
+            : 'pointer-events-none -translate-y-full opacity-0'
+        }`}
+      >
+        <a href="#" className="block border-b border-white/10 px-6 py-[18px] font-sans text-lg font-light text-white">Collection</a>
+        <a href="#" className="block border-b border-white/10 px-6 py-[18px] font-sans text-lg font-light text-white">Gifts</a>
+        <a href="#" className="block border-b border-white/10 px-6 py-[18px] font-sans text-lg font-light text-white">Event</a>
+        <Link to="/about" className="block border-b border-white/10 px-6 py-[18px] font-sans text-lg font-light text-white">About</Link>
+      </nav>
     </header>
   )
 }

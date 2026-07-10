@@ -1,29 +1,53 @@
 import { Link } from 'react-router-dom'
 
-const brandTextClass = 'mx-auto max-w-250 font-pretendard text-2xl leading-[1.5] text-brand-text max-[1440px]:text-[17px] max-[1200px]:text-base max-[768px]:text-sm'
+const brandTextClass = 'mx-auto max-w-250 font-pretendard text-2xl leading-[1.5] text-brand-text max-[1440px]:text-[17px] max-[1200px]:text-base max-[768px]:text-[12px] max-[768px]:leading-[1.2]'
 
 export default function Brand() {
   return (
     <section className="py-45 text-center max-[1440px]:py-35 max-[1024px]:py-25 max-[768px]:py-20">
       <div className="mx-auto w-full max-w-360 px-10">
-        <p className="font-cormorant text-[42px] font-semibold text-[#B29656]">
-          [ A <span className="text-[62px] font-medium">100</span>Year Legacy of Belgian Premium Chocolate ]
+        {/* Desktop gold title */}
+        <p className="font-cormorant text-[42px] font-semibold text-[#B29656] max-[768px]:hidden">
+          [ A 100 Year Legacy of Belgian Premium Chocolate ]
         </p>
-        <p className="mt-3 font-cormorant text-[42px] font-semibold text-brand-maroon">'GODIVA'</p>
+        {/* Mobile gold title */}
+        <p className="hidden font-cormorant text-[24px] font-bold leading-[1.3] text-[#B29656] max-[768px]:block">
+          [ Belgian Premium Chocolate ]
+        </p>
+        <p className="mt-3 font-cormorant text-[42px] font-semibold text-brand-maroon max-[768px]:text-[24px] max-[768px]:font-bold max-[768px]:leading-[1.3]">'GODIVA'</p>
 
-        <div className="mx-auto my-15 h-25 w-0.5 bg-[#707070]" />
+        <div className="mx-auto my-15 h-25 w-0.5 bg-[#707070] max-[768px]:h-[60px]" />
 
-        <h2 className="mb-10 font-pretendard text-[40px] font-bold max-[1440px]:text-[34px] max-[1200px]:text-[28px] max-[1024px]:text-2xl max-[768px]:text-xl">
+        <h2 className="mb-10 font-pretendard text-[40px] font-bold max-[1440px]:text-[34px] max-[1200px]:text-[28px] max-[1024px]:text-2xl max-[768px]:text-[18px]">
           프리미엄 초콜릿 브랜드 고디바의 전통과 가치입니다
         </h2>
-        <p className={brandTextClass}>
-          1926년 벨기에에서 탄생한 고디바는 전 세계 100여 개국에서 판매되며 많은 사랑을 받고 있습니다.<br />
-          전통과 혁신을 겸비한 프리미엄 초콜릿 브랜드로서, 엄선된 원료와 최고의 기술로 품질을 완성합니다.       
-        </p>
-        <p className={`${brandTextClass} mt-6`}>
-          최고급 카카오 원두와 프로방스 지방, 그리스산 아몬드, 자연 건조 과일 등 최상의 재료를 사용합니다.<br />
-          고디바만의 정교한 초콜릿 코팅과 몰딩 기법으로 깊고 풍부한 풍미를 완성합니다.
-        </p>
+
+        {/* Desktop paragraphs */}
+        <div className="max-[768px]:hidden">
+          <p className={brandTextClass}>
+            1926년 벨기에에서 탄생한 고디바는 전 세계 100여 개국에서 판매되며 많은 사랑을 받고 있습니다. 전통과 혁신을 겸비한 프리미엄 초콜릿 브랜드로서, 엄선된 원료와 최고의 기술로 품질을 완성합니다.
+          </p>
+          <p className={`${brandTextClass} mt-5`}>
+            최고급 카카오 원두와 프로방스 지방, 그리스산 아몬드, 자연 건조 과일 등 최상의 재료를 사용합니다. 고디바만의 정교한 초콜릿 코팅과 몰딩 기법으로 깊고 풍부한 풍미를 완성합니다.
+          </p>
+        </div>
+
+        {/* Mobile paragraphs */}
+        <div className="hidden max-[768px]:block">
+          <p className={brandTextClass}>
+            1926년 벨기에에서 시작된 고디바는<br />
+            전 세계에서 사랑받는 프리미엄 초콜릿 브랜드입니다.
+          </p>
+          <p className={`${brandTextClass} mt-5`}>
+            엄선된 원료와 장인 정신으로<br />
+            깊고 풍부한 풍미를 완성합니다.
+          </p>
+          <p className={`${brandTextClass} mt-5`}>
+            최고급 카카오와 아몬드,<br />
+            자연 건조 과일을 사용해<br />
+            고디바만의 특별한 맛을 선보입니다.
+          </p>
+        </div>
 
         <Link
           to="/about"

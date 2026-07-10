@@ -22,7 +22,7 @@ export default function Beyond() {
         </h2>
         <p className="font-pretendard text-xl text-brand-text-sub">초콜릿 그 이상의 가치를 경험하세요.</p>
 
-        <div className="mt-[226px] grid grid-cols-2 items-start gap-8 text-left max-[768px]:grid-cols-1">
+        <div className="mt-[226px] grid grid-cols-2 items-start gap-8 text-left max-[768px]:mt-10 max-[768px]:grid-cols-1">
           {CARDS.map(({ src, alt, title, desc }, i) => (
             <div
               key={title}

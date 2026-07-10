@@ -3,22 +3,25 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 const SLIDE_DATA = [
   {
     bg: '/assets/images/common/banner1.png',
-    title: 'A Century of Chocolate Heritage',
+    mobileBg: '/assets/images/common/mobilebanner1.png',
+    title: <>A Century of<br />Chocolate Heritage</>,
     desc: <>Crafted since 1926 with artisanal tradition and rich flavor, <br />discover a special collection celebrating Godiva's 100th anniversary.</>,
   },
   {
     bg: '/assets/images/common/banner2.png',
+    mobileBg: '/assets/images/common/mobilebanner2.png',
     title: 'A New Beginning of Sweetness',
     desc: <>Experience the rich flavor of our Triple Chocolate Cake,<br />crafted with the perfect harmony of three distinct chocolates.</>,
   },
   {
     bg: '/assets/images/common/banner3.png',
-    title: 'A Special Gift Inspired by Spring',
+    mobileBg: '/assets/images/common/mobilebanner3.png',
+    title: <>A Special Gift<br />Inspired by Spring</>,
     desc: <>Celebrate the warmth and beauty of the season with our limited-edition Spring Gift Collection, available for a limited time only.</>,
   },
 ]
 
-const INTERVAL = 4000
+const INTERVAL = 5000
 const TOTAL = SLIDE_DATA.length
 
 export default function Hero() {
@@ -77,11 +80,20 @@ export default function Hero() {
     <section className="relative h-screen min-h-[720px] overflow-hidden bg-brand-dark text-white after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(to_bottom,transparent_40%,rgba(0,0,0,0.55)_100%)] after:content-['']">
       <div className="absolute inset-0">
         {SLIDE_DATA.map((slide, i) => (
-          <div
-            key={i}
-            className={`absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-[900ms] ease-in-out ${i === current ? 'opacity-100' : ''}`}
-            style={{ backgroundImage: `url('${slide.bg}')` }}
-          />
+          <div key={i} className={`absolute inset-0 opacity-0 transition-opacity duration-[900ms] ease-in-out ${i === current ? 'opacity-100' : ''}`}>
+            {/* 데스크탑 배경 */}
+            <div
+              className={`absolute inset-0 bg-cover bg-center ${slide.mobileBg ? 'max-[768px]:hidden' : ''}`}
+              style={{ backgroundImage: `url('${slide.bg}')` }}
+            />
+            {/* 모바일 배경 */}
+            {slide.mobileBg && (
+              <div
+                className="absolute inset-0 bg-cover bg-center hidden max-[768px]:block"
+                style={{ backgroundImage: `url('${slide.mobileBg}')` }}
+              />
+            )}
+          </div>
         ))}
       </div>
 
@@ -94,25 +106,35 @@ export default function Hero() {
           contentVisible ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <h1 className="mb-[46px] font-cormorant text-7xl leading-none font-bold max-[1440px]:text-8xl max-[1200px]:text-[80px] max-[1024px]:text-6xl max-[768px]:text-4xl">
+        <h1 className="mb-[46px] font-cormorant text-7xl leading-none font-bold max-[1440px]:text-8xl max-[1200px]:text-[80px] max-[1024px]:text-6xl max-[768px]:text-[40px] max-[768px]:leading-[1.2] max-[768px]:mb-5">
           {SLIDE_DATA[current].title}
         </h1>
-        <p className="max-w-350 font-pretendard text-[32px] leading-[1.5] font-light max-[1440px]:text-4xl max-[1200px]:text-3xl max-[1024px]:text-2xl max-[768px]:text-base">
+        <p className="max-w-350 font-pretendard text-[32px] leading-[1.5] font-light max-[1440px]:text-4xl max-[1200px]:text-3xl max-[1024px]:text-2xl max-[768px]:text-[14px] max-[768px]:leading-[1.5]">
           {SLIDE_DATA[current].desc}
         </p>
       </div>
 
+      {/* 모바일 전체 너비 인디케이터 */}
+      <div className="absolute left-5 right-5 bottom-[35px] z-[1] hidden max-[768px]:flex">
+        {SLIDE_DATA.map((_, i) => (
+          <span
+            key={i}
+            className={`h-[2px] flex-1 transition-colors duration-300 ease-in-out ${i === current ? 'bg-white' : 'bg-white/15'}`}
+          />
+        ))}
+      </div>
+
       <div className="absolute inset-x-0 bottom-15 z-[1] mx-auto flex w-full max-w-360 items-center justify-end gap-4 px-10 font-pretendard text-base">
-        <div className="flex">
+        <div className="flex max-[768px]:hidden">
           {SLIDE_DATA.map((_, i) => (
             <span
               key={i}
-              className={`h-0.5 w-[33.33px] bg-white/30 transition-colors duration-300 ease-in-out ${i === current ? 'bg-white' : ''}`}
+              className={`h-[2px] w-[33.33px] transition-colors duration-300 ease-in-out ${i === current ? 'bg-white' : 'bg-white/30'}`}
             />
           ))}
         </div>
-        <span className="tracking-[10%]">{current + 1}/{TOTAL}</span>
-        <div className="flex items-center gap-0.5">
+        <span className="tracking-[10%] max-[768px]:hidden">{current + 1}/{TOTAL}</span>
+        <div className="flex items-center gap-0.5 max-[768px]:hidden">
           <button type="button" className="cursor-pointer" aria-label="이전 슬라이드" onClick={handlePrev}>
             <img src="/assets/images/common/arrowL_icon.png" alt="이전" />
           </button>
