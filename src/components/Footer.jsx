@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const COMPANY_INFO = (
-  <dl className="pb-4 pt-1 text-sm text-brand-text/70 leading-[2]">
-    <div className="flex gap-3"><dt className="w-20 shrink-0 font-bold text-brand-text">상호명</dt><dd>(주)비에스케이코퍼레이션</dd></div>
-    <div className="flex gap-3"><dt className="w-20 shrink-0 font-bold text-brand-text">Office</dt><dd>서울특별시 강남구 학동로 230(논현동)<br />유림빌딩 5,6,7층</dd></div>
-    <div className="flex gap-3"><dt className="w-20 shrink-0 font-bold text-brand-text">E-Mail</dt><dd>info@godiva.kr</dd></div>
-    <div className="flex gap-3"><dt className="w-20 shrink-0 font-bold text-brand-text">Tel</dt><dd>080-759-7700</dd></div>
+  <dl className="pb-4 pt-1 text-sm text-white leading-[2]">
+    <div className="flex gap-3"><dt className="w-20 shrink-0 font-bold text-white">상호명</dt><dd>(주)비에스케이코퍼레이션</dd></div>
+    <div className="flex gap-3"><dt className="w-20 shrink-0 font-bold text-white">Office</dt><dd>서울특별시 강남구 학동로 230(논현동)<br />유림빌딩 5,6,7층</dd></div>
+    <div className="flex gap-3"><dt className="w-20 shrink-0 font-bold text-white">E-Mail</dt><dd>info@godiva.kr</dd></div>
+    <div className="flex gap-3"><dt className="w-20 shrink-0 font-bold text-white">Tel</dt><dd>080-759-7700</dd></div>
   </dl>
 )
 
@@ -77,12 +77,12 @@ export default function Footer() {
       </div>
 
       {/* ── Mobile footer ──────────────────────────────── */}
-      <div className="hidden max-[768px]:block bg-white px-5 pt-8 pb-10">
+      <div className="hidden max-[768px]:block bg-brand-dark px-5 pt-8 pb-10 text-white">
         {MOBILE_SECTIONS.map((sec, i) => (
-          <div key={sec.label} className="border-b border-gray-200">
+          <div key={sec.label} className="border-b border-white/70">
             <button
               type="button"
-              className="flex w-full items-center justify-between py-4 text-sm font-bold text-brand-text"
+              className="flex w-full items-center justify-between pt-4 pb-[19px] text-[15px] font-bold text-white"
               onClick={() => setOpenIdx(openIdx === i ? -1 : i)}
             >
               {sec.label}
@@ -95,25 +95,23 @@ export default function Footer() {
         ))}
 
         {/* Legal links */}
-        <div className="mt-8 flex gap-3 text-[11px] text-gray-400">
+        <div className="mt-8 flex gap-3 text-[12px] text-white/60">
           <a href="#">AGREEMENT</a>
-          <span>|</span>
           <a href="#">PRIVACY POLICY</a>
-          <span>|</span>
           <a href="#">GUIDE</a>
         </div>
 
         {/* Logo + social icons */}
-        <div className="mt-6 flex items-center justify-between">
-          <img className="h-[56px]" src="/assets/images/common/footer_logo.png" alt="GODIVA Belgium 1926" />
-          <div className="flex gap-2">
-            <a href="#" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-gray-100">
+        <div className="mt-[67px] flex items-center justify-between">
+          <img className="h-[100px] w-[100px] object-contain" src="/assets/images/common/footer_logo.png" alt="GODIVA Belgium 1926" />
+          <div className="flex gap-[8px]">
+            <a href="#" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-[#D9D9D9]/20">
               <img className="h-4 w-4" src="/assets/images/common/insta_icon.png" alt="Instagram" />
             </a>
-            <a href="#" aria-label="카카오톡" className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-gray-100">
+            <a href="#" aria-label="카카오톡" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-[#D9D9D9]/20">
               <img className="h-4 w-4" src="/assets/images/common/kakaotalk_icon.png" alt="카카오톡" />
             </a>
-            <a href="#" aria-label="Youtube" className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-gray-100">
+            <a href="#" aria-label="Youtube" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-[#D9D9D9]/20">
               <img className="h-4 w-4" src="/assets/images/common/youtube_icon.png" alt="Youtube" />
             </a>
           </div>

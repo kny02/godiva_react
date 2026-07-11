@@ -174,7 +174,7 @@ export default function AboutPage() {
                   fontSize: '80px',
                   fontWeight: 400,
                   color: '#c8a870',
-                  lineHeight: 1,
+                  lineHeight: 1,                  
                 }}>
                   {item.year}
                 </div>
