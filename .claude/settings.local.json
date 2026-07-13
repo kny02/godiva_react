@@ -5,7 +5,8 @@
       "Bash(pkill -f \"vite\")",
       "Bash(pkill -f \"npm run dev\")",
       "PowerShell(node -e \"const p=require\\('playwright'\\); console.log\\('ok'\\)\" 2>$null; if \\($?\\) { \"playwright available\" } else { \"no playwright\" })",
-      "PowerShell(npm list *)"
+      "PowerShell(npm list *)",
+      "Bash(node \"C:\\\\Users\\\\3725n\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--godiva-react\\\\5801b7a9-9f35-4d46-85fc-daa8e2ccfe07\\\\scratchpad\\\\shot.mjs\")"
     ]
   }
 }

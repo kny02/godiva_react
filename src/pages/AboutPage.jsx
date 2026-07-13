@@ -51,8 +51,6 @@ const TIMELINE = [
   },
 ]
 
-const CORMORANT = '"Cormorant Garamond", "Times New Roman", serif'
-
 export default function AboutPage() {
   useEffect(() => {
     document.title = 'About Us | GODIVA'
@@ -62,169 +60,96 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main style={{ backgroundColor: '#2b1a12', fontFamily: '"Pretendard", sans-serif' }}>
-    
+      <main className="bg-brand-dark font-pretendard">
+
         {/* ── 1. Heritage & Craft ─────────────────────────────── */}
         <section>
-          <div style={{
-            maxWidth: '1440px',
-            margin: '0 auto',
-            padding: '0 40px',
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            minHeight: '140vh',
-          }}>
-          {/* Left: heritage image */}
-          <img
-            src="/assets/images/about/heritage.png"
-            alt="Heritage"
-            style={{ width: '614px', height: '1000px', objectFit: 'cover', display: 'block', marginTop: '280px' }}
-          />
+          <div className="mx-auto grid max-w-360 grid-cols-2 px-10 min-h-[140vh] max-[1024px]:min-h-0 max-[768px]:grid-cols-1 max-[768px]:px-5 max-[768px]:pt-25">
+            {/* Left: heritage image */}
+            <img
+              src="/assets/images/about/heritage.png"
+              alt="Heritage"
+              className="mt-[280px] block h-[1000px] w-[614px] object-cover max-[1024px]:mt-[120px] max-[1024px]:h-[700px] max-[1024px]:w-full max-[768px]:mt-0 max-[768px]:h-auto max-[768px]:w-full"
+            />
 
-          {/* Right: title + description */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            padding: '280px 0 90px 80px',
-          }}>
-            <h1 style={{
-              fontFamily: CORMORANT,
-              fontWeight: 700,
-              fontSize: '124px',
-              lineHeight: 1.2,
-              color: '#f5ede4',
-              textAlign: 'right',
-              margin: 0,
-            }}>
-              Heritage<br />
-              &amp;<br />
-              Craft
-            </h1>
+            {/* Right: title + description */}
+            <div className="flex flex-col pt-[280px] pb-[90px] pl-20 max-[1024px]:pt-[120px] max-[1024px]:pb-15 max-[1024px]:pl-10 max-[768px]:pt-10 max-[768px]:pb-12 max-[768px]:pl-0">
+              <h1 className="m-0 text-right font-cormorant text-[124px] leading-[1.2] font-bold text-[#f5ede4] max-[1024px]:text-[80px] max-[768px]:text-left max-[768px]:text-[52px] max-[768px]:leading-[1.15]">
+                Heritage<br />
+                &amp;<br />
+                Craft
+              </h1>
 
-            <div style={{ marginTop: '140px' }}>
-              <p style={{ fontSize: '18px', lineHeight: 1.5, color: '#fff', fontFamily: '"Pretendard", sans-serif', fontWeight:'300', margin: 0 }}>
-               고디바의 벨기에 제조 공장은 고디바를 처음 만든 드랍스가(家)가 처음 초콜릿을 만들기 시작했던 브뤼셀에 위치해 있습니다.<br></br>
-               초콜릿 제조 방식은 조셉 드랍스의 전통적인 방식을 그대로 고수하고 있습니다. 엄선된 원료와 초콜릿 장인의 기술을 이용하여 퀄리티와 맛을 자랑은 고디바는 명실공히 벨기에 최고의 초콜릿 브랜드로 자리매김 하였습니다.
-              </p>
+              <div className="mt-35 max-[1024px]:mt-15 max-[768px]:mt-8">
+                <p className="m-0 text-lg leading-[1.5] font-light text-white max-[768px]:text-sm">
+                  고디바의 벨기에 제조 공장은 고디바를 처음 만든 드랍스가(家)가 처음 초콜릿을 만들기 시작했던 브뤼셀에 위치해 있습니다.<br />
+                  초콜릿 제조 방식은 조셉 드랍스의 전통적인 방식을 그대로 고수하고 있습니다. 엄선된 원료와 초콜릿 장인의 기술을 이용하여 퀄리티와 맛을 자랑은 고디바는 명실공히 벨기에 최고의 초콜릿 브랜드로 자리매김 하였습니다.
+                </p>
+              </div>
             </div>
-          </div>
           </div>
         </section>
 
         {/* ── 2. Craft description ──────────────────────────────── */}
         <section>
-          <div style={{
-            maxWidth: '1440px',
-            margin: '0 auto',
-            padding: '80px 40px',
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            alignItems: 'center',
-          }}>
-          {/* Left: text */}
-          <div style={{ paddingRight: '60px' }}>
-            <p style={{ fontSize: '18px', lineHeight: 1.5, color: '#fff', fontFamily: '"Pretendard", sans-serif', fontWeight:'300', margin: 0 }}>
-              고디바는 ‘엔로빙(Enrobing)’ 과 ‘쉘 몰딩(Shell Molding)’ 두 가지 기법을 사용하여 다양한 크기와 모양의 초콜릿을 만듭니다.
-              엔로빙은 특정 재료를 중심으로 하여 외부를 감싸는 기법을 가리킵니다. 러치 캐러멜을 멜트드 초콜릿으로 코팅하는 것이 그 예입니다. 
-              쉘 몰딩 기법은 유럽에서 널리 쓰이는 방식으로, 대부분의 고디바 초콜릿이 쉘 몰딩 방식으로 만들어집니다.
-            </p>
-          </div>
+          <div className="mx-auto grid max-w-360 grid-cols-2 items-center px-10 py-20 max-[768px]:grid-cols-1 max-[768px]:gap-8 max-[768px]:px-5 max-[768px]:py-12">
+            {/* Left: text */}
+            <div className="pr-15 max-[1024px]:pr-8 max-[768px]:pr-0">
+              <p className="m-0 text-lg leading-[1.5] font-light text-white max-[768px]:text-sm">
+                고디바는 ‘엔로빙(Enrobing)’ 과 ‘쉘 몰딩(Shell Molding)’ 두 가지 기법을 사용하여 다양한 크기와 모양의 초콜릿을 만듭니다.
+                엔로빙은 특정 재료를 중심으로 하여 외부를 감싸는 기법을 가리킵니다. 러치 캐러멜을 멜트드 초콜릿으로 코팅하는 것이 그 예입니다.
+                쉘 몰딩 기법은 유럽에서 널리 쓰이는 방식으로, 대부분의 고디바 초콜릿이 쉘 몰딩 방식으로 만들어집니다.
+              </p>
+            </div>
 
-          {/* Right: craftsman image */}
-          <div style={{ paddingLeft: '40px' }}>
-            <img
-              src="/assets/images/about/heritage2.png"
-              alt="장인"
-              style={{ width: '462px', height: '693px', objectFit: 'cover', display: 'block', marginLeft: 'auto', marginBottom:'225px'}}
-            />
-          </div>
+            {/* Right: craftsman image */}
+            <div className="pl-10 max-[1024px]:pl-6 max-[768px]:pl-0">
+              <img
+                src="/assets/images/about/heritage2.png"
+                alt="장인"
+                className="mb-[225px] ml-auto block h-[693px] w-[462px] object-cover max-[1024px]:mb-16 max-[1024px]:h-[520px] max-[1024px]:w-full max-[768px]:mb-0 max-[768px]:ml-0 max-[768px]:h-auto max-[768px]:w-full"
+              />
+            </div>
           </div>
         </section>
 
         {/* ── 3. Timeline ──────────────────────────────────────── */}
-        <section style={{ backgroundColor: '#1e1008', padding: '60px 0 120px' }}>
+        <section className="bg-[#1e1008] pt-15 pb-30 max-[768px]:pt-10 max-[768px]:pb-16">
           {/* Wrapper with relative positioning for the vertical line */}
-          <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 40px', position: 'relative' }}>
+          <div className="relative mx-auto max-w-360 px-10 max-[768px]:px-5">
 
-            {/* Continuous vertical line */}
-            <div style={{
-              position: 'absolute',
-              left: '325px',
-              top: 0,
-              bottom: 0,
-              width: '1px',
-              backgroundColor: '#4a3828',
-            }} />
+            {/* Continuous vertical line (desktop only) */}
+            <div className="absolute top-0 bottom-0 left-[325px] w-px bg-[#4a3828] max-[1024px]:left-[220px] max-[768px]:hidden" />
 
             {TIMELINE.map((item, i) => (
               <div
                 key={item.year}
-                style={{
-                  padding: '120px 0',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  position: 'relative',
-                }}
+                className="relative flex items-start py-30 max-[1024px]:py-20 max-[768px]:flex-col max-[768px]:items-start max-[768px]:gap-3 max-[768px]:py-8"
               >
                 {/* Year */}
-                <div style={{
-                  flexShrink: 0,
-                  width: '190px',
-                  fontFamily: '"Noto Serif KR", serif',
-                  fontSize: '80px',
-                  fontWeight: 400,
-                  color: '#c8a870',
-                  lineHeight: 1,                  
-                }}>
+                <div className="w-[190px] shrink-0 font-serif text-[80px] leading-none font-normal text-[#c8a870] max-[1024px]:w-[130px] max-[1024px]:text-[56px] max-[768px]:w-auto max-[768px]:text-[36px]">
                   {item.year}
                 </div>
 
                 {/* Diamond marker on the line */}
-                <div style={{
-                  flexShrink: 0,
-                  width: '40px',
-                  marginLeft: '75px',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  paddingTop: '14px',
-                  zIndex: 1,
-                }}>
-                  <div style={{
-                    width: '9px',
-                    height: '9px',
-                    backgroundColor: '#c8a870',
-                    transform: 'rotate(45deg)',
-                  }} />
+                <div className="z-[1] ml-[75px] flex w-10 shrink-0 justify-center pt-[14px] max-[1024px]:ml-10 max-[768px]:mt-0 max-[768px]:mb-1 max-[768px]:ml-0 max-[768px]:pt-0">
+                  <div className="h-[9px] w-[9px] rotate-45 bg-[#c8a870]" />
                 </div>
 
                 {/* Timeline image */}
                 <img
                   src={`/assets/images/about/history${i + 1}.png`}
                   alt={item.title}
-                  style={{ flexShrink: 0, width: '370px', height: 'auto', display: 'block', marginLeft: '80px' }}
+                  className="ml-20 block h-auto w-[370px] shrink-0 max-[1024px]:ml-8 max-[1024px]:w-[280px] max-[768px]:ml-0 max-[768px]:w-full"
                 />
 
                 {/* Text */}
-                <div style={{ flex: 1, paddingLeft: '60px' }}>
-                  <h3 style={{
-                    fontFamily: '"Pretendard", sans-serif',
-                    fontSize: '32px',
-                    fontWeight: 700,
-                    color: '#fff',
-                    margin: '0 0 20px',
-                    lineHeight: 1.0,
-                  }}>
+                <div className="flex-1 pl-15 max-[1024px]:pl-8 max-[768px]:mt-2 max-[768px]:pl-0">
+                  <h3 className="m-0 mb-5 font-pretendard text-[32px] leading-none font-bold text-white max-[1024px]:text-2xl max-[768px]:mb-3 max-[768px]:text-xl">
                     {item.title}
                   </h3>
                   {item.lines.map((line, j) => (
-                    <p key={j} style={{
-                      fontFamily: '"Pretendard", sans-serif',
-                      fontSize: '20px',
-                      lineHeight: 1.5,
-                      fontWeight:'300',
-                      color: '#fff',
-                      margin: j < item.lines.length - 1 ? '0 0 10px' : '0',
-                    }}>
+                    <p key={j} className={`font-pretendard text-xl leading-[1.5] font-light text-white max-[768px]:text-sm ${j < item.lines.length - 1 ? 'mb-[10px]' : 'mb-0'}`}>
                       {line}
                     </p>
                   ))}

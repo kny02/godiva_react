@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const navLinkClass =
-  'font-sans text-lg font-light text-white max-[1024px]:block max-[1024px]:border-b max-[1024px]:border-white/10 max-[1024px]:px-6 max-[1024px]:py-[18px]'
+  'font-sans text-lg font-light text-white transition-colors duration-200 ease-in-out hover:text-brand-gold max-[1024px]:block max-[1024px]:border-b max-[1024px]:border-white/10 max-[1024px]:px-6 max-[1024px]:py-[18px]'
+
+const mobileNavLinkClass =
+  'block border-b border-white/10 px-6 py-[18px] font-sans text-lg font-light text-white transition-colors duration-200 ease-in-out hover:text-brand-gold'
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -96,18 +99,35 @@ export default function Header() {
         </button>
       </div>
 
-      {/* ── Mobile nav overlay (≤768px) ──────────────────── */}
+      {/* ── Mobile nav backdrop (≤768px) ─────────────────── */}
+      <div
+        className={`fixed inset-0 z-[999] hidden bg-black/50 transition-opacity duration-300 ease-in-out max-[768px]:block ${
+          isNavOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+        onClick={toggleNav}
+        aria-hidden="true"
+      />
+
+      {/* ── Mobile nav drawer (≤768px) ───────────────────── */}
       <nav
-        className={`fixed top-25 left-0 w-full bg-brand-dark flex-col transition-[transform,opacity] duration-[250ms] ease-in-out hidden max-[768px]:flex ${
-          isNavOpen
-            ? 'pointer-events-auto translate-y-0 opacity-100'
-            : 'pointer-events-none -translate-y-full opacity-0'
+        className={`fixed top-0 right-0 z-[1001] hidden h-full w-[78%] max-w-80 flex-col bg-brand-dark transition-transform duration-300 ease-in-out max-[768px]:flex ${
+          isNavOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <a href="#" className="block border-b border-white/10 px-6 py-[18px] font-sans text-lg font-light text-white">Collection</a>
-        <a href="#" className="block border-b border-white/10 px-6 py-[18px] font-sans text-lg font-light text-white">Gifts</a>
-        <a href="#" className="block border-b border-white/10 px-6 py-[18px] font-sans text-lg font-light text-white">Event</a>
-        <Link to="/about" className="block border-b border-white/10 px-6 py-[18px] font-sans text-lg font-light text-white">About</Link>
+        <div className="flex items-center justify-end px-5 pt-6 pb-2">
+          <button
+            type="button"
+            className="cursor-pointer p-2 text-2xl leading-none text-white"
+            aria-label="메뉴 닫기"
+            onClick={toggleNav}
+          >
+            ×
+          </button>
+        </div>
+        <a href="#" className={mobileNavLinkClass}>Collection</a>
+        <a href="#" className={mobileNavLinkClass}>Gifts</a>
+        <a href="#" className={mobileNavLinkClass}>Event</a>
+        <Link to="/about" className={mobileNavLinkClass}>About</Link>
       </nav>
     </header>
   )
