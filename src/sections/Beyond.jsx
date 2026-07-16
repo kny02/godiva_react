@@ -26,11 +26,15 @@ export default function Beyond() {
           {CARDS.map(({ src, alt, title, desc }, i) => (
             <div
               key={title}
-              className={`relative cursor-pointer overflow-hidden after:absolute after:inset-0 after:bg-black/40 after:content-[''] ${
+              className={`group relative cursor-pointer overflow-hidden after:absolute after:inset-0 after:bg-black/40 after:content-[''] ${
                 i === 1 ? 'mt-45 max-[768px]:mt-0 max-[768px]:mb-[108px]' : ''
               }`}
             >
-              <img className="aspect-[3/4] w-full object-cover max-[768px]:h-[355px]" src={src} alt={alt} />
+              <img
+                className="aspect-[3/4] w-full scale-100 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 max-[768px]:h-[355px]"
+                src={src}
+                alt={alt}
+              />
               <div
                 className={`absolute top-9 z-[1] text-white max-[768px]:top-[16px] ${
                   i === 1 ? 'right-9 text-right max-[768px]:right-[20px]' : 'left-9 max-[768px]:left-[20px]'

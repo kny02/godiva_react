@@ -7,8 +7,8 @@ export default function Brand() {
     <section className="py-45 text-center max-[1440px]:py-35 max-[1024px]:py-25 max-[768px]:py-20">
       <div className="mx-auto w-full max-w-360 px-10">
         {/* Desktop gold title */}
-        <p className="font-cormorant text-[42px] font-semibold text-[#B29656] max-[768px]:hidden">
-          [ A 100 Year Legacy of Belgian Premium Chocolate ]
+        <p className="font-cormorant text-[42px] font-bold text-[#B29656] max-[768px]:hidden">
+          [ A <span className="text-[62px] font-medium">100</span> Year Legacy of Belgian Premium Chocolate ]
         </p>
         {/* Mobile gold title */}
         <p className="hidden font-cormorant text-[24px] font-bold leading-[1.3] text-[#B29656] max-[768px]:block">

@@ -1,4 +1,8 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useCallback, useRef, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectFade } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/effect-fade'
 
 const SLIDE_DATA = [
   {
@@ -28,59 +32,53 @@ export default function Hero() {
   const [current, setCurrent] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [contentVisible, setContentVisible] = useState(true)
-  const timerRef = useRef(null)
+  const swiperRef = useRef(null)
+  const contentTimerRef = useRef(null)
 
-  const goTo = useCallback((index) => {
-    const next = ((index % TOTAL) + TOTAL) % TOTAL
+  const handleTransitionStart = useCallback(() => {
+    clearTimeout(contentTimerRef.current)
     setContentVisible(false)
-    setTimeout(() => {
-      setCurrent(next)
-      setContentVisible(true)
-    }, 200)
+    contentTimerRef.current = setTimeout(() => setContentVisible(true), 200)
   }, [])
-
-  const startAuto = useCallback(() => {
-    timerRef.current = setInterval(() => {
-      setCurrent(prev => {
-        const next = (prev + 1) % TOTAL
-        setContentVisible(false)
-        setTimeout(() => setContentVisible(true), 200)
-        return next
-      })
-    }, INTERVAL)
-  }, [])
-
-  const stopAuto = useCallback(() => {
-    clearInterval(timerRef.current)
-    timerRef.current = null
-  }, [])
-
-  useEffect(() => {
-    if (isPlaying) startAuto()
-    return stopAuto
-  }, [isPlaying, startAuto, stopAuto])
 
   const handlePrev = () => {
-    stopAuto()
-    goTo(current - 1)
-    if (isPlaying) startAuto()
+    swiperRef.current?.slidePrev()
   }
 
   const handleNext = () => {
-    stopAuto()
-    goTo(current + 1)
-    if (isPlaying) startAuto()
+    swiperRef.current?.slideNext()
   }
 
   const handleTogglePlay = () => {
+    const swiper = swiperRef.current
+    if (!swiper) return
+    if (isPlaying) {
+      swiper.autoplay.stop()
+    } else {
+      swiper.autoplay.start()
+    }
     setIsPlaying(prev => !prev)
   }
 
   return (
-    <section className="relative h-screen min-h-[720px] overflow-hidden bg-brand-dark text-white after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(to_bottom,transparent_40%,rgba(0,0,0,0.55)_100%)] after:content-['']">
-      <div className="absolute inset-0">
+    <section className="relative h-screen min-h-[720px] overflow-hidden bg-brand-dark text-white after:pointer-events-none after:absolute after:inset-0 after:z-[1] after:bg-[linear-gradient(to_bottom,transparent_40%,rgba(0,0,0,0.55)_100%)] after:content-['']">
+      <Swiper
+        modules={[Autoplay, EffectFade]}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
+        speed={900}
+        loop
+        autoplay={{ delay: INTERVAL, disableOnInteraction: false }}
+        onSwiper={swiper => {
+          swiperRef.current = swiper
+        }}
+        onSlideChange={swiper => setCurrent(swiper.realIndex)}
+        onSlideChangeTransitionStart={handleTransitionStart}
+        className="absolute inset-0"
+        style={{ position: 'absolute', inset: 0 }}
+      >
         {SLIDE_DATA.map((slide, i) => (
-          <div key={i} className={`absolute inset-0 opacity-0 transition-opacity duration-[900ms] ease-in-out ${i === current ? 'opacity-100' : ''}`}>
+          <SwiperSlide key={i}>
             {/* 데스크탑 배경 */}
             <div
               className={`absolute inset-0 bg-cover bg-center ${slide.mobileBg ? 'max-[768px]:hidden' : ''}`}
@@ -93,16 +91,16 @@ export default function Hero() {
                 style={{ backgroundImage: `url('${slide.mobileBg}')` }}
               />
             )}
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
 
       {current === 2 && (
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-60 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.35),transparent)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-60 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.35),transparent)]" />
       )}
 
       <div
-        className={`absolute inset-x-0 bottom-15 z-[1] mx-auto w-full max-w-360 px-10 transition-opacity duration-200 ease-in-out max-[1024px]:bottom-25 max-[768px]:bottom-20 ${
+        className={`absolute inset-x-0 bottom-15 z-[2] mx-auto w-full max-w-360 px-10 transition-opacity duration-200 ease-in-out max-[1024px]:bottom-25 max-[768px]:bottom-20 ${
           contentVisible ? 'opacity-100' : 'opacity-0'
         }`}
       >
@@ -115,7 +113,7 @@ export default function Hero() {
       </div>
 
       {/* 모바일 전체 너비 인디케이터 */}
-      <div className="absolute left-5 right-5 bottom-[35px] z-[1] hidden max-[768px]:flex">
+      <div className="absolute left-5 right-5 bottom-[35px] z-[2] hidden max-[768px]:flex">
         {SLIDE_DATA.map((_, i) => (
           <span
             key={i}
@@ -124,7 +122,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="absolute inset-x-0 bottom-15 z-[1] mx-auto flex w-full max-w-360 items-center justify-end gap-4 px-10 font-pretendard text-base">
+      <div className="absolute inset-x-0 bottom-15 z-[2] mx-auto flex w-full max-w-360 items-center justify-end gap-4 px-10 font-pretendard text-base">
         <div className="flex max-[768px]:hidden">
           {SLIDE_DATA.map((_, i) => (
             <span
