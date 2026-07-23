@@ -20,7 +20,20 @@
       "Bash(NODE_PATH=\"C:\\\\Users\\\\User\\\\Desktop\\\\6-7mon\\\\godiva_react\\\\node_modules\" node beyond-hover-check.js)",
       "Bash(NODE_PATH=\"C:\\\\Users\\\\User\\\\Desktop\\\\6-7mon\\\\godiva_react\\\\node_modules\" node brand-reveal-check.js)",
       "Bash(NODE_PATH=\"C:\\\\Users\\\\User\\\\Desktop\\\\6-7mon\\\\godiva_react\\\\node_modules\" node brand-replay-check.js)",
-      "Bash(NODE_PATH=\"C:\\\\Users\\\\User\\\\Desktop\\\\6-7mon\\\\godiva_react\\\\node_modules\" node brand-bracket-open-check.js)"
+      "Bash(NODE_PATH=\"C:\\\\Users\\\\User\\\\Desktop\\\\6-7mon\\\\godiva_react\\\\node_modules\" node brand-bracket-open-check.js)",
+      "Bash(node \"C:\\\\Users\\\\User\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-User-Desktop-6-7mon-godiva-react\\\\62814c8a-1ef7-42d4-948d-3180a4b9cc5a\\\\scratchpad\\\\screenshot.js\" http://localhost:5174/about)",
+      "Bash(node analyze.mjs)",
+      "Bash(node analyze2.mjs)",
+      "Bash(node crop_grid.mjs \"C:\\\\Users\\\\User\\\\Desktop\\\\서브모바일_본작업.png\" 460 640 \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/crop_img1full.png\" 2)",
+      "Bash(node crop_grid.mjs \"C:\\\\Users\\\\User\\\\Desktop\\\\서브모바일_본작업.png\" 380 950 \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/crop_full12.png\" 1.5)",
+      "Bash(node analyze5.mjs)",
+      "Bash(node screenshot.mjs http://localhost:5174/about \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/v2.png\")",
+      "Bash(node crop.mjs \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/v2.png\" 0 750 \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/v2_top.png\")",
+      "Bash(node crop.mjs \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/v2.png\" 1400 2100 \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/v2_timeline.png\")",
+      "Bash(node crop.mjs \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/v2.png\" 1080 1450 \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/v2_1926.png\")",
+      "Bash(node screenshot.mjs http://localhost:5174/about \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/v3.png\")",
+      "Bash(node crop.mjs \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/v3.png\" 1080 1450 \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/v3_1926.png\")",
+      "Bash(node screenshot_desktop.mjs \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-6-7mon-godiva-react/62814c8a-1ef7-42d4-948d-3180a4b9cc5a/scratchpad/desktop.png\")"
     ]
   }
 }

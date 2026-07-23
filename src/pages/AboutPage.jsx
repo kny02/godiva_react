@@ -69,19 +69,22 @@ export default function AboutPage() {
             <img
               src="/assets/images/about/heritage.png"
               alt="Heritage"
-              className="mt-[280px] block h-[1000px] w-[614px] object-cover max-[1024px]:mt-[120px] max-[1024px]:h-[700px] max-[1024px]:w-full max-[768px]:mt-0 max-[768px]:h-auto max-[768px]:w-full"
+              className="mt-[280px] block h-[1000px] w-[614px] object-cover max-[1024px]:mt-[120px] max-[1024px]:h-[700px] max-[1024px]:w-full max-[768px]:order-2 max-[768px]:mt-[60px] max-[768px]:h-auto max-[768px]:w-[88%] max-[768px]:aspect-[3/2] max-[768px]:mr-auto"
             />
 
             {/* Right: title + description */}
-            <div className="flex flex-col pt-[280px] pb-[90px] pl-20 max-[1024px]:pt-[120px] max-[1024px]:pb-15 max-[1024px]:pl-10 max-[768px]:pt-10 max-[768px]:pb-12 max-[768px]:pl-0">
-              <h1 className="m-0 text-right font-cormorant text-[124px] leading-[1.2] font-bold text-[#f5ede4] max-[1024px]:text-[80px] max-[768px]:text-left max-[768px]:text-[52px] max-[768px]:leading-[1.15]">
-                Heritage<br />
-                &amp;<br />
-                Craft
+            <div className="flex flex-col pt-[280px] pb-[90px] pl-20 max-[1024px]:pt-[120px] max-[1024px]:pb-15 max-[1024px]:pl-10 max-[768px]:order-1 max-[768px]:pt-10 max-[768px]:pb-0 max-[768px]:pl-0">
+              <h1 className="m-0 text-right font-cormorant text-[124px] leading-[1.2] font-bold text-[#f5ede4] max-[1024px]:text-[80px] max-[768px]:mt-[85px] max-[768px]:text-center max-[768px]:text-[48px] max-[768px]:leading-[1.15]">
+                <span className="max-[768px]:hidden">
+                  Heritage<br />
+                  &amp;<br />
+                  Craft
+                </span>
+                <span className="hidden max-[768px]:inline">Heritage &amp; Craft</span>
               </h1>
 
-              <div className="mt-35 max-[1024px]:mt-15 max-[768px]:mt-8">
-                <p className="m-0 text-lg leading-[1.5] font-light text-white max-[768px]:text-sm">
+              <div className="mt-35 max-[1024px]:mt-15 max-[768px]:mt-[73px]">
+                <p className="m-0 text-lg leading-[1.5] font-light text-white max-[768px]:text-center max-[768px]:text-[12px]">
                   고디바의 벨기에 제조 공장은 고디바를 처음 만든 드랍스가(家)가 처음 초콜릿을 만들기 시작했던 브뤼셀에 위치해 있습니다.<br />
                   초콜릿 제조 방식은 조셉 드랍스의 전통적인 방식을 그대로 고수하고 있습니다. 엄선된 원료와 초콜릿 장인의 기술을 이용하여 퀄리티와 맛을 자랑은 고디바는 명실공히 벨기에 최고의 초콜릿 브랜드로 자리매김 하였습니다.
                 </p>
@@ -92,10 +95,10 @@ export default function AboutPage() {
 
         {/* ── 2. Craft description ──────────────────────────────── */}
         <section>
-          <div className="mx-auto grid max-w-360 grid-cols-2 items-center px-10 py-20 max-[768px]:grid-cols-1 max-[768px]:gap-8 max-[768px]:px-5 max-[768px]:py-12">
+          <div className="mx-auto grid max-w-360 grid-cols-2 items-center px-10 py-20 max-[768px]:grid-cols-1 max-[768px]:gap-0 max-[768px]:px-5 max-[768px]:pt-0 max-[768px]:pb-16">
             {/* Left: text */}
-            <div className="pr-15 max-[1024px]:pr-8 max-[768px]:pr-0">
-              <p className="m-0 text-lg leading-[1.5] font-light text-white max-[768px]:text-sm">
+            <div className="pr-15 max-[1024px]:pr-8 max-[768px]:order-2 max-[768px]:pr-0">
+              <p className="m-0 text-lg leading-[1.5] font-light text-white max-[768px]:mt-[60px] max-[768px]:text-center max-[768px]:text-[12px]">
                 고디바는 ‘엔로빙(Enrobing)’ 과 ‘쉘 몰딩(Shell Molding)’ 두 가지 기법을 사용하여 다양한 크기와 모양의 초콜릿을 만듭니다.
                 엔로빙은 특정 재료를 중심으로 하여 외부를 감싸는 기법을 가리킵니다. 러치 캐러멜을 멜트드 초콜릿으로 코팅하는 것이 그 예입니다.
                 쉘 몰딩 기법은 유럽에서 널리 쓰이는 방식으로, 대부분의 고디바 초콜릿이 쉘 몰딩 방식으로 만들어집니다.
@@ -103,56 +106,59 @@ export default function AboutPage() {
             </div>
 
             {/* Right: craftsman image */}
-            <div className="pl-10 max-[1024px]:pl-6 max-[768px]:pl-0">
+            <div className="pl-10 max-[1024px]:pl-6 max-[768px]:order-1 max-[768px]:pl-0">
               <img
                 src="/assets/images/about/heritage2.png"
                 alt="장인"
-                className="mb-[225px] ml-auto block h-[693px] w-[462px] object-cover max-[1024px]:mb-16 max-[1024px]:h-[520px] max-[1024px]:w-full max-[768px]:mb-0 max-[768px]:ml-0 max-[768px]:h-auto max-[768px]:w-full"
+                className="mb-[225px] ml-auto block h-[693px] w-[462px] object-cover max-[1024px]:mb-16 max-[1024px]:h-[520px] max-[1024px]:w-full max-[768px]:mb-0 max-[768px]:-mt-10 max-[768px]:h-auto max-[768px]:w-[60%] max-[768px]:aspect-square"
               />
             </div>
           </div>
         </section>
 
         {/* ── 3. Timeline ──────────────────────────────────────── */}
-        <section className="bg-[#1e1008] pt-15 pb-30 max-[768px]:pt-10 max-[768px]:pb-16">
+        <section className="bg-[#16100E] pt-15 pb-30 max-[768px]:pt-10 max-[768px]:pb-16">
           {/* Wrapper with relative positioning for the vertical line */}
           <div className="relative mx-auto max-w-360 px-10 max-[768px]:px-5">
 
-            {/* Continuous vertical line (desktop only) */}
-            <div className="absolute top-0 bottom-0 left-[325px] w-px bg-[#4a3828] max-[1024px]:left-[220px] max-[768px]:hidden" />
+            {/* Continuous vertical line */}
+            <div className="absolute top-0 bottom-0 left-[325px] w-px bg-[#4a3828] max-[1024px]:left-[220px] max-[768px]:left-[114px]" />
 
             {TIMELINE.map((item, i) => (
               <div
                 key={item.year}
-                className="relative flex items-start py-30 max-[1024px]:py-20 max-[768px]:flex-col max-[768px]:items-start max-[768px]:gap-3 max-[768px]:py-8"
+                className="relative flex items-start py-30 max-[1024px]:py-20 max-[768px]:py-10"
               >
                 {/* Year */}
-                <div className="w-[190px] shrink-0 font-serif text-[80px] leading-none font-normal text-[#c8a870] max-[1024px]:w-[130px] max-[1024px]:text-[56px] max-[768px]:w-auto max-[768px]:text-[36px]">
+                <div className="w-[190px] shrink-0 font-serif text-[80px] leading-none font-normal text-[#c8a870] max-[1024px]:w-[130px] max-[1024px]:text-[56px] max-[768px]:w-[70px] max-[768px]:text-[34px]">
                   {item.year}
                 </div>
 
                 {/* Diamond marker on the line */}
-                <div className="z-[1] ml-[75px] flex w-10 shrink-0 justify-center pt-[14px] max-[1024px]:ml-10 max-[768px]:mt-0 max-[768px]:mb-1 max-[768px]:ml-0 max-[768px]:pt-0">
-                  <div className="h-[9px] w-[9px] rotate-45 bg-[#c8a870]" />
+                <div className="z-[1] ml-[75px] flex w-10 shrink-0 justify-center pt-[14px] max-[1024px]:ml-10 max-[768px]:ml-0 max-[768px]:pt-2">
+                  <div className="h-[9px] w-[9px] rotate-45 bg-[#c8a870] max-[768px]:h-3 max-[768px]:w-3 max-[768px]:rotate-0 max-[768px]:rounded-full max-[768px]:shadow-[0_0_10px_5px_rgba(200,168,112,0.2)]" />
                 </div>
 
-                {/* Timeline image */}
-                <img
-                  src={`/assets/images/about/history${i + 1}.png`}
-                  alt={item.title}
-                  className="ml-20 block h-auto w-[370px] shrink-0 max-[1024px]:ml-8 max-[1024px]:w-[280px] max-[768px]:ml-0 max-[768px]:w-full"
-                />
+                {/* Image + text: side-by-side on desktop, stacked on mobile */}
+                <div className="flex flex-1 max-[768px]:flex-col">
+                  {/* Timeline image */}
+                  <img
+                    src={`/assets/images/about/history${i + 1}.png`}
+                    alt={item.title}
+                    className="ml-20 block h-auto w-[370px] shrink-0 max-[1024px]:ml-8 max-[1024px]:w-[280px] max-[768px]:ml-0 max-[768px]:w-full"
+                  />
 
-                {/* Text */}
-                <div className="flex-1 pl-15 max-[1024px]:pl-8 max-[768px]:mt-2 max-[768px]:pl-0">
-                  <h3 className="m-0 mb-5 font-pretendard text-[32px] leading-none font-bold text-white max-[1024px]:text-2xl max-[768px]:mb-3 max-[768px]:text-xl">
-                    {item.title}
-                  </h3>
-                  {item.lines.map((line, j) => (
-                    <p key={j} className={`font-pretendard text-xl leading-[1.5] font-light text-white max-[768px]:text-sm ${j < item.lines.length - 1 ? 'mb-[10px]' : 'mb-0'}`}>
-                      {line}
-                    </p>
-                  ))}
+                  {/* Text */}
+                  <div className="flex-1 pl-15 max-[1024px]:pl-8 max-[768px]:mt-4 max-[768px]:pl-0">
+                    <h3 className="m-0 mb-5 font-pretendard text-[32px] leading-none font-bold text-white max-[1024px]:text-2xl max-[768px]:mb-3 max-[768px]:text-[16px]">
+                      {item.title}
+                    </h3>
+                    {item.lines.map((line, j) => (
+                      <p key={j} className={`font-pretendard text-xl leading-[1.5] font-light text-white max-[768px]:text-[12px] ${j < item.lines.length - 1 ? 'mb-[10px]' : 'mb-0'}`}>
+                        {line}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
